@@ -1,0 +1,130 @@
+.kiaan-orb {
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.3), 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: move;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  z-index: 1000;
+  animation: pulse 3s infinite;
+}
+
+.kiaan-orb:hover {
+  transform: scale(1.05);
+}
+
+.kiaan-orb.hidden {
+  transform: scale(0);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(102, 126, 234, 0.5); }
+  100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.3); }
+}
+
+.kiaan-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: 80vw;
+  height: 80vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none;
+}
+
+.kiaan-panel.open {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.kiaan-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: none;
+}
+
+.kiaan-overlay.active {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .kiaan-panel {
+    width: 95vw;
+    height: 95vh;
+  }
+}
+
+.kiaan-panel-content {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.kiaan-mode-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.kiaan-mode-button {
+  padding: 10px 20px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.kiaan-mode-button.active {
+  background: #667eea;
+  color: white;
+}
+
+.kiaan-orb-icon {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+}
+
+textarea, input[type="file"] {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.messages {
+  margin-top: 20px;
+}

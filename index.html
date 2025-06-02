@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiaan Voice Orb Demo</title>
+  <link rel="stylesheet" href="../dist/kiaan-voice-orb.min.css">
+</head>
+<body>
+  <h1>Kiaan Voice Orb Widget Demo</h1>
+  <p>Click the orb to open the voice assistant panel.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/@11labs/react/dist/index.js"></script>
+  <script src="../dist/kiaan-voice-orb.min.js"></script>
+  <script>
+    KiaanVoiceOrb.init({
+      configUrl: '/config/config.php'
+    });
+  </script>
+</body>
+</html>
